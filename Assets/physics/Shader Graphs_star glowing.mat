@@ -39,13 +39,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _ActiveEmission: 1
     - _IntensityEmission: 12
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
     - _Color: {r: 1, g: 0.6272205, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &1494399400436802415
+--- !u!114 &217084042596111892
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
