@@ -40,7 +40,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _ActiveEmission: 1
-    - _IntensityEmission: 12
+    - _IntensityEmission: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:

@@ -7,10 +7,12 @@ public class bola : MonoBehaviour
     public float fuerza = 10f;  // Fuerza de impulso que se aplicará a la bola
     public GameObject ball;
     private Rigidbody rb;
+    private Material material;
 
     void Start()
     {
         rb = ball.GetComponent<Rigidbody>();
+        material = ball.GetComponent<Material>();
     }
 
     void Update()
@@ -24,5 +26,6 @@ public class bola : MonoBehaviour
         {
             rb.AddForce(Vector3.left.normalized * fuerza, ForceMode.Impulse);
         }
+        material.SetFloat("IntensityEmission", rb.velocity.magnitude);
     }
 }
