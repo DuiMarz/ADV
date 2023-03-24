@@ -4,28 +4,32 @@ using UnityEngine;
 
 public class bola : MonoBehaviour
 {
-    public float fuerza = 10f;  // Fuerza de impulso que se aplicará a la bola
-    public GameObject ball;
+    public float fuerza = 70f;  // Fuerza de impulso que se aplicará al martillo
+    public GameObject hammer;
     private Rigidbody rb;
     private Material material;
+    public GameObject ball;
 
+    private void Awake()
+    {
+        ball.GetComponent<Rigidbody>().Sleep();
+    }
     void Start()
     {
-        rb = ball.GetComponent<Rigidbody>();
-        material = ball.GetComponent<Material>();
+        rb = hammer.GetComponent<Rigidbody>();
+        material = hammer.GetComponent<MeshRenderer>().material;
+        
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
-            // Aplicar fuerza hacia arriba mientras se mantiene presionada la tecla de espacio
-            rb.AddForce(Vector3.right.normalized * fuerza, ForceMode.Impulse);
+            // Aplicar fuerza hacia z+ al apretar la tecla de espacio
+            rb.AddForce(Vector3.forward.normalized * fuerza, ForceMode.Impulse);
         }
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            rb.AddForce(Vector3.left.normalized * fuerza, ForceMode.Impulse);
-        }
-        material.SetFloat("IntensityEmission", rb.velocity.magnitude);
+
+        
+        //material.SetFloat("_IntensityEmission", rb.velocity.magnitude);
     }
 }

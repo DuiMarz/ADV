@@ -39,8 +39,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _ActiveEmission: 1
-    - _IntensityEmission: 1
+    - _ActiveEmission: 0
+    - _IntensityEmission: 7.46
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
