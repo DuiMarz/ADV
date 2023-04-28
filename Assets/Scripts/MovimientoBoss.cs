@@ -35,13 +35,23 @@ public class MovimientoBoss : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
             controller.Move(moveDirection * Time.deltaTime);
             
-        } else if (Input.GetKeyUp(KeyCode.Space))
+        } else 
         {
-            animator.SetTrigger("Jump");
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                moveDirection.y += 10;
+                controller.Move(moveDirection * Time.deltaTime);
+            }
+            else
+            {
+                animator.SetFloat("Horizontal", currentInput.x * speedGiros);
+                animator.SetFloat("Vertical", currentInput.y * speed);
+            }
+
+
         }
 
-        animator.SetFloat("Horizontal", currentInput.x * speedGiros);
-        animator.SetFloat("Vertical", currentInput.y * speed);
+        
 
 
     }
